@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FREE EQUESTRIAN HORSE DOWNLOAD NOW!!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            margin: 20px 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .button-container {
+            margin: 20px 0;
+        }
+
+        #runScriptButton {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #not-a-scam {
+            font-size: 14px;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Download Free Equestrian Horse Now!!!</h1>
+        <div id="not-a-scam">Not a scam, we promise!</div>
+        <div class="button-container">
+            <button id="runScriptButton">DOWNLOAD EQUESTRIAN HORSE FOR FREE</button>
+        </div>
+        <div class="image-container">
+            <!-- Use the URL of the image directly -->
+            <img src="https://steamcdn-a.akamaihd.net/steam/apps/1048830/ss_795a059ce8824ba5aef697804812d04c1e8ee453.1920x1080.jpg?t=1555126785" alt="Horse Image">
+        </div>
+    </div>
+    <script>
+        document.getElementById('runScriptButton').addEventListener('click', function() {
+            fetch('/run-script', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert('Error message executed successfully!');
+                    } else {
+                        alert('Error: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Failed to execute the error message.');
+                });
+        });
+    </script>
+</body>
+</html>
