@@ -6,7 +6,6 @@ app = Flask(__name__)
 
 # Define the directory to serve
 BASE_DIR = os.path.dirname(__file__)
-DIST_DIR = os.path.join(BASE_DIR, 'dist')
 
 @app.route('/')
 def index():
@@ -17,7 +16,7 @@ def run_script():
     # Execute the Python script
     try:
         result = subprocess.run(
-            ['python', os.path.join(DIST_DIR, 'error_message.py')],
+            ['python', os.path.join(BASE_DIR, 'error_message.py')],
             capture_output=True, text=True, check=True
         )
         return jsonify({"status": "success", "output": result.stdout})
